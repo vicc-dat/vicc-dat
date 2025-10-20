@@ -7,34 +7,57 @@ Welcome to my portfolio! Here you'll find a collection of my data science projec
    
 ## Projects
    
-### Project 01: [Ant Colony Simulation](projects/ant-colony-simulation/)
-Ant colonies operate as decentralized multi-agent systems that achieve complex collective behavior through local interactions. Building on Conway's Game of Life principles, I developed a grid-based framework to simulate competing ant colonies in a grid-based environment, implementing mobile agents (ants) with probabilistic decision-making capabilities that mimic real-world ant behaviors. This project addresses the question: **How do competing decentralized ant colonies optimize resource collection and adapt their strategies in response to environmental constraints and rival interference?**
+### Project 01: [Ant Colony Simulation]
+Ant colonies operate as decentralized multi-agent systems that achieve complex collective behavior through local interactions. Building on Conway's Game of Life principles, I developed a grid-based framework to simulate competing ant colonies, implementing mobile agents (ants) with probabilistic decision-making capabilities that mimic real-world ant behaviors. This project addresses the question: *How do competing decentralized ant colonies optimize resource collection and adapt their strategies in response to environmental constraints and rival interference?*
 
 #### Technical Implementation
-The simulation includes 49 configurable parameters governing everything from grid size and display settings to ant behavior, pheromone dynamics, food properties, colony characteristics, and inter-colony conflict outcomes.
+The simulation includes 49 configurable parameters governing everything from grid size and display settings to ant behavior, pheromone dynamics, food properties, colony characteristics, and inter-colony conflict outcomes. The simulation is implemented as a Python application using Pygame for visualization. Here’s a snippet showing the core ant movement decision logic:
 
-##### Sample Parameters:
-```python
-SIMULATION_CONFIG = {
-    # Grid and display settings
-    'GRID_WIDTH': 300,            # Width of the grid in cells
-    'GRID_HEIGHT': 200,           # Height of the grid in cells
-    'CELL_SIZE': 3,               # Size of each cell in pixels
-    'FPS': 25,                    # Frames per second
+```
+def select_move(self, grid, food_grid, colony_pheromones):
+    # Calculate movement weights based on surrounding cells
+    weights = np.ones(8)  # Initialize with equal weights
     
-    # Ant behavior settings
-    'MAX_ANTS': 300,              # Maximum ants per colony
-    'MOVEMENT_PROBABILITY': 0.9,  # Chance ants move each tick
-    'PHEROMONE_DEPOSIT': 50,      # Food trail strength
-    'FOOD_ATTRACTION': 8.0,       # Food influence on movement
-}
+    # Modify weights based on pheromones, food, and current direction
+    if self.has_food:
+        # Bias toward nest when carrying food
+        nest_angle = self.calculate_angle_to_nest()
+        dir_weights = self.calculate_direction_weights(nest_angle, INWARD_DIRECTION_WEIGHT)
+        weights *= dir_weights
+    else:
+        # Bias toward exploration when foraging
+        weights *= self.calculate_exploration_weights()
+    
+    # Apply food attraction
+    for i, (dx, dy) in enumerate(self.DIRECTIONS):
+        nx, ny = self.x + dx, self.y + dy
+        if 0 <= nx < grid.shape[1] and 0 <= ny < grid.shape[0]:
+            if food_grid[ny, nx] > 0:
+                weights[i] *= (1.0 + FOOD_ATTRACTION)
+            
+            # Apply pheromone influence
+            if not self.has_food and colony_pheromones[ny, nx] > 0:
+                weights[i] *= (1.0 + PHEROMONE_WEIGHT * min(colony_pheromones[ny, nx], 1.0))
+    
+    # Normalize weights to form probability distribution
+    if np.sum(weights) > 0:
+        weights /= np.sum(weights)
+        
+    # Select direction based on probability distribution
+    direction_idx = np.random.choice(8, p=weights)
+    return self.DIRECTIONS[direction_idx]
 ```
 
-### Visualizations
+#### Visualizations
+This GIF shows a brief recording of the grid-based, ant environment:
+![Anthills GIF](/assets/images/ant-images/anthills.gif)
 
-![Colony metrics over time](/assets/images/ant-images/anthills.gif)
+Data analyzing ant behaviour was collected using Pandas during runs of the simulation, which would be vital for simulation-based analysis:
+![Anthills GIF](/assets/images/ant-images/food_collected_chart.png)
+![Anthills GIF](/assets/images/ant-images/territory_size_chart.png)
+![Anthills GIF](/assets/images/ant-images/starved_ants_chart.png)
 
-### Key Findings
+#### Key Findings
 
 The simulation revealed several interesting patterns in colony behavior and competition:
 
@@ -47,14 +70,6 @@ The simulation revealed several interesting patterns in colony behavior and comp
    - Colonies develop distinct foraging patterns based on competition pressure
    - Pheromone trails create efficient resource gathering networks
    - Territorial boundaries fluctuate based on colony strength and aggression levels
-
-### Technologies Used
-
-- **Python**: Core programming language
-- **Pygame**: For rendering the simulation and handling user input
-- **NumPy**: For efficient grid operations and calculations
-- **Pandas**: For data collection and analysis
-- **Matplotlib**: For visualizing simulation results
 
 ### Future Enhancements
 
