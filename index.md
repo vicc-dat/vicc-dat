@@ -52,23 +52,22 @@ def select_move(self, grid, food_grid, colony_pheromones):
 This GIF shows a brief recording of the grid-based, ant environment:
 ![Anthills GIF](/assets/images/ant-images/anthills.gif)
 
-Data analyzing ant behaviour was collected using Pandas during runs of the simulation, which would be vital for simulation-based analysis:
+Data analyzing ant behaviour was collected using Pandas during runs of the simulation, which would be vital for simulation-based analysis. Below are examples of several charts demonstrating the data that was collected during a single run of the simulation:
 ![Anthills GIF](/assets/images/ant-images/food_collected_chart.png)
 ![Anthills GIF](/assets/images/ant-images/territory_size_chart.png)
-![Anthills GIF](/assets/images/ant-images/starved_ants_chart.png)
+![Anthills GIF](/assets/images/ant-images/battles_won_chart.png)
 
 #### Key Findings
 
 The simulation revealed several interesting patterns in colony behavior and competition:
 
 1. **Aggression thresholds significantly impact colony success**:
-   - Highly aggressive colonies (threshold ~0.33) showed long-term resilience despite slower initial growth
-   - Peaceful colonies (threshold ~0.64) maintained smaller but more stable territories
-   - Mid-range aggression (threshold ~0.55) led to rapid early expansion but potential collapse due to overextension
+   - Highly aggressive colonies (aggression threshold < 0.4) showed long-term resilience despite slower initial growth
+   - Peaceful colonies (aggression threshold > 0.60) maintained smaller but more stable territories
+   - Mid-range aggression (thresholds around 0.50) led to rapid early expansion but potential collapse due to overextension
 
 2. **Territory and resource management strategies emerge naturally**:
    - Colonies develop distinct foraging patterns based on competition pressure
-   - Pheromone trails create efficient resource gathering networks
    - Territorial boundaries fluctuate based on colony strength and aggression levels
 
 ### Future Enhancements
