@@ -54,9 +54,9 @@ This GIF shows a brief recording of the grid-based, ant environment:
 While a single run of the simulation was in process, data on ant behaviour such as the number of ants alive from each colony, their territory size, the numbers of batters won and lost, the count of ants that had starved to death, and how much food each colony was collecting was stored using Pandas. Collecting data during any run is vital to the simulations purpose. Below are examples of several charts demonstrating the data that was collected during a single run of the simulation:
 
 ![Anthills GIF](/assets/images/ant-images/ants_alive_chart.png)
-![Anthills GIF](/assets/images/ant-images/food_collected_chart.png)
-![Anthills GIF](/assets/images/ant-images/territory_size_chart.png)
 ![Anthills GIF](/assets/images/ant-images/battles_won_chart.png)
+![Anthills GIF](/assets/images/ant-images/territory_size_chart.png)
+
 
 #### Key Findings
 
