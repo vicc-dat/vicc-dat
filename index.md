@@ -75,11 +75,10 @@ The simulation revealed several interesting patterns in colony behavior and comp
 
 Future versions of the simulation could improve biological realism by incorporating:
 
-1. Chemical recognition systems for nestmate identification
-2. Adaptive foraging strategies based on past success
-3. Terrain features and obstacles
-4. Life cycle processes including seasonal variation
-5. Multiple ant species with distinct traits
+1. Adaptive foraging strategies based on past success
+2. Terrain features and obstacles
+3. Life cycle processes including seasonal variation
+4. More ant species with modifiable, distinct traits
 
 ### Conclusion
 
