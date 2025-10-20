@@ -63,7 +63,7 @@ While a single run of the simulation was in process, data on ant behaviour such 
 The simulation revealed several interesting patterns in colony behavior and competition:
 
 1. **Aggression thresholds significantly impact colony success**:
-   - Highly aggressive colonies (aggression threshold < 0.4) showed long-term resilience despite slower initial growth, possibly due to "over-focusing" on territorial disputes over food collection.
+   - Highly aggressive colonies (aggression threshold < 0.4) showed long-term resilience more volatile changes in population, possibly due to "over-focusing" on territorial disputes over food collection at times.
    - Peaceful colonies (aggression threshold > 0.60) maintained smaller but more stable territories.
    - Mid-range aggression (thresholds around 0.50) led to rapid early expansion but potential collapse due to overextension.
 
