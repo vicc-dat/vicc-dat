@@ -6,7 +6,7 @@ layout: default
 Welcome to my portfolio! Here you'll find a collection of my data science projects.
    
    
-# Project 01: Simulating Ant Colony Survival
+## **Project 01: Simulating Ant Colony Survival**
 Ant colonies operate as decentralized multi-agent systems that achieve complex collective behavior through local interactions. Building on Conway's Game of Life principles, I developed a grid-based framework to simulate competing ant colonies, implementing mobile agents (ants) with probabilistic decision-making capabilities that mimic real-world ant behaviors. This project addresses the question: *How do competing decentralized ant colonies optimize resource collection and adapt their strategies in response to environmental constraints and rival interference?*
 
 #### Technical Implementation
@@ -63,9 +63,9 @@ While a single run of the simulation was in process, data on ant behaviour such 
 The simulation revealed several interesting patterns in colony behavior and competition:
 
 1. **Aggression thresholds significantly impact colony success**:
-   - Highly aggressive colonies (aggression threshold < 0.4) showed long-term resilience despite slower initial growth
-   - Peaceful colonies (aggression threshold > 0.60) maintained smaller but more stable territories
-   - Mid-range aggression (thresholds around 0.50) led to rapid early expansion but potential collapse due to overextension
+   - Highly aggressive colonies (aggression threshold < 0.4) showed long-term resilience despite slower initial growth, possibly due to "over-focusing" on territorial disputes over food collection.
+   - Peaceful colonies (aggression threshold > 0.60) maintained smaller but more stable territories.
+   - Mid-range aggression (thresholds around 0.50) led to rapid early expansion but potential collapse due to overextension.
 
 2. **Territory and resource management strategies emerge naturally**:
    - Colonies develop distinct foraging patterns based on competition pressure
@@ -86,4 +86,4 @@ Future versions of the simulation could improve biological realism by incorporat
 This simulation demonstrates how adaptive behaviors can emerge from simple rules in a multi-agent system. The decentralized nature of ant colonies provides valuable insights for both ecological understanding and applications in swarm robotics, network routing, and distributed algorithms.
 
 
-# Project 02: Simulating Ant Colony Survival
+## **Project 02: Toronto Traffic Congestion Prediction [coming soon]**
