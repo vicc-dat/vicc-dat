@@ -4,7 +4,8 @@ title: "Ant Colony Simulation"
 permalink: /projects/ant-colony-simulation/
 ---
 
-# An Ant Colony's Game of Life
+# An Ant Colony's Game of Life 
+# 🚧 UNDER CONSTRUCTION 🚧
 
 ## Project Overview
 
