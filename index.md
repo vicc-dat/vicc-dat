@@ -6,7 +6,7 @@ layout: default
 Welcome to my portfolio! Here you'll find a collection of my data science projects.
    
    
-## Project 01: Simulating Ant Colony Survival
+# Project 01: Simulating Ant Colony Survival
 Ant colonies operate as decentralized multi-agent systems that achieve complex collective behavior through local interactions. Building on Conway's Game of Life principles, I developed a grid-based framework to simulate competing ant colonies, implementing mobile agents (ants) with probabilistic decision-making capabilities that mimic real-world ant behaviors. This project addresses the question: *How do competing decentralized ant colonies optimize resource collection and adapt their strategies in response to environmental constraints and rival interference?*
 
 #### Technical Implementation
@@ -85,3 +85,5 @@ Future versions of the simulation could improve biological realism by incorporat
 
 This simulation demonstrates how adaptive behaviors can emerge from simple rules in a multi-agent system. The decentralized nature of ant colonies provides valuable insights for both ecological understanding and applications in swarm robotics, network routing, and distributed algorithms.
 
+
+# Project 02: Simulating Ant Colony Survival
